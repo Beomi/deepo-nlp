@@ -42,6 +42,7 @@ RUN pip install \
     s3fs fastparquet soynlp konlpy \
     randomcolor pynamodb plotly
 RUN pip install "dask[complete]"
+RUN pip install python-snappy
 
 # Reset Workdir
 WORKDIR /code
