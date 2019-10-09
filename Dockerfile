@@ -35,6 +35,9 @@ RUN pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions &
     jupyter nbextensions_configurator enable && \
     jupyter contrib nbextension install
 
+RUN pip install jupyter_http_over_ws && \
+    jupyter serverextension enable --py jupyter_http_over_ws
+
 # Install another packages
 RUN pip install -e git+https://github.com/kanth989/pandas_explode#egg=pandas_explode
 RUN pip install \
