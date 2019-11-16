@@ -47,5 +47,8 @@ RUN pip install \
 RUN pip install "dask[complete]"
 RUN pip install python-snappy
 
+# Add Mecab-Ko
+RUN curl -L https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh | bash
+
 # Reset Workdir
 WORKDIR /code
