@@ -1,4 +1,4 @@
-FROM ufoym/deepo:all-jupyter-py36-cu100
+FROM ufoym/deepo:all-jupyter
 
 # Install JVM for Konlpy
 RUN apt-get update && \
@@ -49,6 +49,9 @@ RUN pip install python-snappy
 
 # Add Mecab-Ko
 RUN curl -L https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh | bash
+
+# Add non-root user
+RUN adduser --disabled-password --gecos "" user
 
 # Reset Workdir
 WORKDIR /code
